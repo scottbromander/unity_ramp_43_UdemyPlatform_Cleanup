@@ -1,0 +1,8 @@
+.DS_STORE/
+Action Platform.sln
+Action Platform.userprefs
+Assembly-CSharp-Editor.csproj
+Assembly-CSharp.csproj
+obj/
+ProjectSettings/
+Temp/
