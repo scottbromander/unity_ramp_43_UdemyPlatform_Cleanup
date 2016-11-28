@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour {
 
 	public bool grounded;
 
+	public AudioSource soundJump;
+	public AudioSource soundShoot;
+
 	// Use this for initialization
 	void Start () {
 		myRB = GetComponent<Rigidbody2D>();
@@ -38,6 +41,7 @@ public class PlayerController : MonoBehaviour {
 		if(Input.GetButtonDown("Jump") && grounded)
 		{
 			myRB.velocity = new Vector2(myRB.velocity.x, jumpSpeed);
+			soundJump.Play ();
 		}
 
 		if(Input.GetAxisRaw("Horizontal") > 0 && transform.localScale.x < 0)
@@ -48,6 +52,7 @@ public class PlayerController : MonoBehaviour {
 		if(Input.GetButtonDown("Fire1"))
 		{
 			Instantiate(bullet, bulletPoint.position, transform.rotation);
+			soundShoot.Play ();
 		}
 
 		anim.SetFloat("Speed", Mathf.Abs(myRB.velocity.x));
