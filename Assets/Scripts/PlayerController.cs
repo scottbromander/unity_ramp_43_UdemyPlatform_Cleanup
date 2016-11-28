@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour {
 	public AudioSource soundJump;
 	public AudioSource soundShoot;
 
+	public float waitBetweenShots;
+	private float betweenShotCounter;
+
 	// Use this for initialization
 	void Start () {
 		myRB = GetComponent<Rigidbody2D>();
@@ -51,12 +54,25 @@ public class PlayerController : MonoBehaviour {
 		
 		if(Input.GetButtonDown("Fire1"))
 		{
-			Instantiate(bullet, bulletPoint.position, transform.rotation);
-			soundShoot.Play ();
+			fireBullet ();
+		}
+
+		if(Input.GetButton("Fire1")){
+			betweenShotCounter -= Time.deltaTime;
+			if (betweenShotCounter <= 0) {
+				fireBullet ();
+			}
 		}
 
 		anim.SetFloat("Speed", Mathf.Abs(myRB.velocity.x));
 		anim.SetBool("Grounded", grounded);
+	}
+
+	void fireBullet(){
+		Instantiate(bullet, bulletPoint.position, transform.rotation);
+		soundShoot.Play ();
+
+		betweenShotCounter = waitBetweenShots;
 	}
 
 	void OnCollisionEnter2D(Collision2D other)
