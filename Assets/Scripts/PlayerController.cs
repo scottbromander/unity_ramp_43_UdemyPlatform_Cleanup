@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour {
 	public float waitBetweenShots;
 	private float betweenShotCounter;
 
+	public GameObject muzzleFlash;
+
 	// Use this for initialization
 	void Start () {
 		myRB = GetComponent<Rigidbody2D>();
@@ -38,6 +40,8 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		muzzleFlash.SetActive (false);
 		
 		myRB.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, myRB.velocity.y);
 
@@ -73,6 +77,8 @@ public class PlayerController : MonoBehaviour {
 		soundShoot.Play ();
 
 		betweenShotCounter = waitBetweenShots;
+
+		muzzleFlash.SetActive (true);
 	}
 
 	void OnCollisionEnter2D(Collision2D other)
