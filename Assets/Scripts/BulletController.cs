@@ -12,6 +12,8 @@ public class BulletController : MonoBehaviour {
 
 	public GameObject impactEffect;
 
+	public float sprayRange = 5.0f;
+
 	// Use this for initialization
 	void Start () {
 		myRB = GetComponent<Rigidbody2D>();
@@ -21,12 +23,14 @@ public class BulletController : MonoBehaviour {
 			bulletSpeed = -bulletSpeed;
 			transform.localScale = new Vector3(-1f, 1f, 1f);
 		}
+
+		sprayRange = Random.Range (-sprayRange, sprayRange);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		myRB.velocity = new Vector2(bulletSpeed, myRB.velocity.y);
+		myRB.velocity = new Vector2(bulletSpeed, sprayRange);
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
