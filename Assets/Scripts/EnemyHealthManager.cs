@@ -6,6 +6,10 @@ public class EnemyHealthManager : MonoBehaviour {
 	public int startingHealth;
 	private int currentHealth;
 
+	public SpriteRenderer[] bodyParts;
+	public float flashLenth;
+	private float flashCounter;
+
 	// Use this for initialization
 	void Start () {
 		currentHealth = startingHealth;
