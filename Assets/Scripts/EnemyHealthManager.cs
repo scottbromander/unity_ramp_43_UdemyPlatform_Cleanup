@@ -27,4 +27,10 @@ public class EnemyHealthManager : MonoBehaviour {
 	{
 		currentHealth -= damage;
 	}
+
+	public void Flash(){
+		for (var i = 0; i < bodyParts.Length; i++) {
+			bodyParts [i].material.SetFloat ("_FlashAmount", 1);
+		}
+	}
 }
