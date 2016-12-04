@@ -21,16 +21,32 @@ public class EnemyHealthManager : MonoBehaviour {
 		{
 			gameObject.SetActive(false);
 		}
+
+		if (flashCounter > 0) {
+			flashCounter -= Time.deltaTime;
+
+			if (flashCounter <= 0) {
+				UnFlash ();
+			}
+		}
 	}
 
 	public void TakeDamage(int damage)
 	{
 		currentHealth -= damage;
+		Flash ();
 	}
 
 	public void Flash(){
 		for (var i = 0; i < bodyParts.Length; i++) {
 			bodyParts [i].material.SetFloat ("_FlashAmount", 1);
+		}
+		flashCounter = flashLenth;
+	}
+
+	public void UnFlash(){
+		for (var i = 0; i < bodyParts.Length; i++) {
+			bodyParts [i].material.SetFloat ("_FlashAmount", 0);
 		}
 	}
 }
