@@ -29,10 +29,19 @@ public class EnemyController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-
 		if(Physics2D.OverlapCircle(wallCheck.position, wallRadius,whatIsWall))
 			moveRight = !moveRight;
+
+		if (knockBack) {
+			knockbackCounter -= Time.deltaTime;
+			myRB.velocity = new Vector2 (knockbackForce * transform.localScale.x, myRB.velocity.y);
+
+			if (knockbackCounter <= 0) {
+				knockBack = false;
+			}
+
+			return;
+		}
 
 		if(!moveRight)
 		{
@@ -56,5 +65,7 @@ public class EnemyController : MonoBehaviour {
 
 	public void KnockBack(){
 		knockbackCounter = knockbackDuration;
+		myRB.velocity = new Vector2 (knockbackForce * transform.localScale.x, knockbackForce);
+		knockBack = true;
 	}
 }

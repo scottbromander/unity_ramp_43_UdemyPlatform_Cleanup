@@ -10,9 +10,12 @@ public class EnemyHealthManager : MonoBehaviour {
 	public float flashLenth;
 	private float flashCounter;
 
+	private EnemyController enemyController;
+
 	// Use this for initialization
 	void Start () {
 		currentHealth = startingHealth;
+		enemyController = GetComponent<EnemyController> ();
 	}
 	
 	// Update is called once per frame
@@ -34,6 +37,7 @@ public class EnemyHealthManager : MonoBehaviour {
 	public void TakeDamage(int damage)
 	{
 		currentHealth -= damage;
+		enemyController.KnockBack ();
 		Flash ();
 	}
 
