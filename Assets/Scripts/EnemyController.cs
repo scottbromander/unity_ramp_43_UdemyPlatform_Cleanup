@@ -16,6 +16,11 @@ public class EnemyController : MonoBehaviour {
 
 	private bool moveRight;
 
+	public float knockbackForce;
+	public float knockbackDuration;
+	private float knockbackCounter;
+	private bool knockBack;
+
 	// Use this for initialization
 	void Start () {
 		myRB = GetComponent<Rigidbody2D>();
@@ -47,5 +52,9 @@ public class EnemyController : MonoBehaviour {
 		{
 			other.gameObject.GetComponent<PlayerHealthManager>().HurtPlayer(damageOnTouch);
 		}
+	}
+
+	public void KnockBack(){
+		knockbackCounter = knockbackDuration;
 	}
 }
