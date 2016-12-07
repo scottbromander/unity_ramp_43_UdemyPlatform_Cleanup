@@ -6,5 +6,7 @@ Topics include:
   - Muzzle Flash
   - Impact Effects
   - Inaccurate Trajectory
-- Enemy Impact Shader effects
+- Enemy Impact Effects:
+  - Shader Effect
+  - Knockback Effect
 - Enemy Spawn Control
