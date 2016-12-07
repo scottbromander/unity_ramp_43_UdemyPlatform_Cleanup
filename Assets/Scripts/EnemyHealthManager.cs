@@ -11,18 +11,22 @@ public class EnemyHealthManager : MonoBehaviour {
 	private float flashCounter;
 
 	private EnemyController enemyController;
+	private Animator anim;
 
 	// Use this for initialization
 	void Start () {
 		currentHealth = startingHealth;
 		enemyController = GetComponent<EnemyController> ();
+		anim = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(currentHealth <= 0)
 		{
-			gameObject.SetActive(false);
+			//gameObject.SetActive(false);
+			enemyController.enabled = false;
+			anim.enabled = false;
 		}
 
 		if (flashCounter > 0) {
