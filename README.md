@@ -9,4 +9,5 @@ Topics include:
 - Enemy Impact Effects:
   - Shader Effect
   - Knockback Effect
+  - Death Effects
 - Enemy Spawn Control
