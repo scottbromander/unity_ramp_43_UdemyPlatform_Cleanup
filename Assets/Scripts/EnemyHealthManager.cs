@@ -14,7 +14,7 @@ public class EnemyHealthManager : MonoBehaviour {
 	private Animator anim;
 	private Rigidbody2D myRB;
 
-	public float deathSpin = 90;
+	public float deathSpin = 10.0f;
 
 	// Use this for initialization
 	void Start () {
