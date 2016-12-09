@@ -12,12 +12,14 @@ public class EnemyHealthManager : MonoBehaviour {
 
 	private EnemyController enemyController;
 	private Animator anim;
+	private Rigidbody2D myRB;
 
 	// Use this for initialization
 	void Start () {
 		currentHealth = startingHealth;
 		enemyController = GetComponent<EnemyController> ();
 		anim = GetComponent<Animator> ();
+		myRB = GetComponent<Rigidbody2D> ();
 	}
 	
 	// Update is called once per frame
@@ -27,6 +29,7 @@ public class EnemyHealthManager : MonoBehaviour {
 			//gameObject.SetActive(false);
 			enemyController.enabled = false;
 			anim.enabled = false;
+			myRB.constraints = RigidbodyConstraints2D.None;
 		}
 
 		if (flashCounter > 0) {
