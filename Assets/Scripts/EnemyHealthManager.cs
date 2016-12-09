@@ -14,6 +14,8 @@ public class EnemyHealthManager : MonoBehaviour {
 	private Animator anim;
 	private Rigidbody2D myRB;
 
+	public float deathSpin = 90;
+
 	// Use this for initialization
 	void Start () {
 		currentHealth = startingHealth;
@@ -30,6 +32,7 @@ public class EnemyHealthManager : MonoBehaviour {
 			enemyController.enabled = false;
 			anim.enabled = false;
 			myRB.constraints = RigidbodyConstraints2D.None;
+			myRB.AddTorque (deathSpin);
 		}
 
 		if (flashCounter > 0) {
