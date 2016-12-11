@@ -32,7 +32,7 @@ public class EnemyHealthManager : MonoBehaviour {
 			enemyController.enabled = false;
 			anim.enabled = false;
 			myRB.constraints = RigidbodyConstraints2D.None;
-			myRB.AddTorque (deathSpin);
+			myRB.AddTorque (deathSpin * -transform.localScale.x);
 
 			gameObject.layer = LayerMask.NameToLayer ("Dead");
 		}
