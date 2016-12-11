@@ -16,6 +16,9 @@ public class EnemyHealthManager : MonoBehaviour {
 
 	public float deathSpin = 10.0f;
 
+	public Sprite[] brokenParts;
+	private bool dead = false;
+
 	// Use this for initialization
 	void Start () {
 		currentHealth = startingHealth;
@@ -26,7 +29,7 @@ public class EnemyHealthManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(currentHealth <= 0)
+		if(currentHealth <= 0 && !dead)
 		{
 			//gameObject.SetActive(false);
 			enemyController.enabled = false;
@@ -35,6 +38,12 @@ public class EnemyHealthManager : MonoBehaviour {
 			myRB.AddTorque (deathSpin * -transform.localScale.x);
 
 			gameObject.layer = LayerMask.NameToLayer ("Dead");
+
+			for (int i = 0; i < bodyParts.Length; i++) {
+				bodyParts [i].sprite = brokenParts [i];
+			}
+
+			dead = true;
 		}
 
 		if (flashCounter > 0) {
