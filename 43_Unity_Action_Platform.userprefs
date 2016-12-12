@@ -1,8 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BulletController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemyHealthManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/EnemyHealthManager.cs" Line="29" Column="25" />
+      <File FileName="Assets/Scripts/EnemyHealthManager.cs" Line="49" Column="26" />
       <File FileName="Assets/Scripts/EnemyController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/BulletController.cs" Line="21" Column="1" />
       <File FileName="Assets/Scripts/PlayerController.cs" Line="1" Column="1" />
