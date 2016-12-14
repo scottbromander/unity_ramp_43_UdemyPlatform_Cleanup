@@ -19,6 +19,8 @@ public class EnemyHealthManager : MonoBehaviour {
 	public Sprite[] brokenParts;
 	private bool dead = false;
 
+	public GameObject explosion;
+
 	// Use this for initialization
 	void Start () {
 		currentHealth = startingHealth;
