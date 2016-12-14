@@ -11,3 +11,4 @@ Topics include:
   - Knockback Effect
   - Death Effects
 - Enemy Spawn Control
+- Dynamic Sprite Swap
