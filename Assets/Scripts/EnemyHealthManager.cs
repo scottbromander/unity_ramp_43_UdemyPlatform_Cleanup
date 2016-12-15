@@ -45,6 +45,8 @@ public class EnemyHealthManager : MonoBehaviour {
 				bodyParts [i].sprite = brokenParts [i];
 			}
 
+			Instantiate (explosion, transform.position, transform.rotation);
+
 			dead = true;
 		}
 
