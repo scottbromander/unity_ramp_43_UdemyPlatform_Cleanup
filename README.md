@@ -10,5 +10,6 @@ Topics include:
   - Shader Effect
   - Knockback Effect
   - Death Effects
+  - Effects Management
 - Enemy Spawn Control
 - Dynamic Sprite Swap
