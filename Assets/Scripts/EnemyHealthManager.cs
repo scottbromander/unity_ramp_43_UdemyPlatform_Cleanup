@@ -21,6 +21,8 @@ public class EnemyHealthManager : MonoBehaviour {
 
 	public GameObject explosion;
 
+	public Rigidbody2D[] RBParts;
+
 	// Use this for initialization
 	void Start () {
 		currentHealth = startingHealth;
