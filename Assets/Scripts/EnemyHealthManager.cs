@@ -22,6 +22,7 @@ public class EnemyHealthManager : MonoBehaviour {
 	public GameObject explosion;
 
 	public Rigidbody2D[] RBParts;
+	public float explosionForce;
 
 	// Use this for initialization
 	void Start () {
