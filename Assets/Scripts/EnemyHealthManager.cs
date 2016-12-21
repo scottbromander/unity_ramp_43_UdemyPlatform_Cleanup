@@ -52,6 +52,9 @@ public class EnemyHealthManager : MonoBehaviour {
 
 			for (int i = 0; i < RBParts.Length; i++) {
 				RBParts [i].isKinematic = false;
+				RBParts [i].AddTorque (deathSpin);
+				RBParts [i].velocity = new Vector2 (Random.Range (-explosionForce, explosionForce), 
+					Random.Range (-explosionForce, explosionForce));
 			}
 
 			dead = true;
