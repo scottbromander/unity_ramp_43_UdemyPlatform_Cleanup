@@ -50,6 +50,10 @@ public class EnemyHealthManager : MonoBehaviour {
 
 			Instantiate (explosion, transform.position, transform.rotation);
 
+			for (int i = 0; i < RBParts.Length; i++) {
+				RBParts [i].isKinematic = false;
+			}
+
 			dead = true;
 		}
 
