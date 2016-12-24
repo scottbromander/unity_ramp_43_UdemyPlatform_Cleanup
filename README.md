@@ -11,6 +11,7 @@ Topics include:
   - Knockback Effect
   - Death Effects
      - Breakapart Pieces
+     - Particle Effects
   - Effects Management
 - Enemy Spawn Control
 - Dynamic Sprite Swap
