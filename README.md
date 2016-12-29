@@ -15,3 +15,5 @@ Topics include:
   - Effects Management
 - Enemy Spawn Control
 - Dynamic Sprite Swap
+- Camera Effects
+  - Lerp
