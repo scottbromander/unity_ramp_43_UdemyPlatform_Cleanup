@@ -17,3 +17,4 @@ Topics include:
 - Dynamic Sprite Swap
 - Camera Effects
   - Lerp
+  - Screen Shake
