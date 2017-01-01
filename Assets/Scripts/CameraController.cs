@@ -7,6 +7,8 @@ public class CameraController : MonoBehaviour {
 
 	public float cameraSpeed;
 
+	public float moveAhead;
+
 	// Use this for initialization
 	void Start () {
 	}
@@ -15,6 +17,6 @@ public class CameraController : MonoBehaviour {
 	void Update () {
 //		transform.position = new Vector3(target.position.x,target.position.y, transform.position.z);
 
-		transform.position = Vector3.Lerp (transform.position, new Vector3 (target.position.x, target.position.y, transform.position.z), cameraSpeed * Time.deltaTime);
+		transform.position = Vector3.Lerp (transform.position, new Vector3 (target.position.x + (moveAhead * target.localScale.x), target.position.y, transform.position.z), cameraSpeed * Time.deltaTime);
 	}
 }
