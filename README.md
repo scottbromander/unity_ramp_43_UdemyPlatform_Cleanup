@@ -18,3 +18,4 @@ Topics include:
 - Camera Effects
   - Lerp
   - Screen Shake
+- Layer Management
