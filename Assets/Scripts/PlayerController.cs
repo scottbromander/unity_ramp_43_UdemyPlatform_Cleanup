@@ -27,10 +27,15 @@ public class PlayerController : MonoBehaviour {
 
 	public GameObject muzzleFlash;
 
+	private CameraController cameraController;
+	public float shakeAmount;
+
 	// Use this for initialization
 	void Start () {
 		myRB = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
+
+		cameraController = FindObjectOfType<CameraController> ();
 	}
 
 	void FixedUpdate()
@@ -79,6 +84,8 @@ public class PlayerController : MonoBehaviour {
 		betweenShotCounter = waitBetweenShots;
 
 		muzzleFlash.SetActive (true);
+
+		cameraController.ScreenShake (shakeAmount);
 	}
 
 	void OnCollisionEnter2D(Collision2D other)

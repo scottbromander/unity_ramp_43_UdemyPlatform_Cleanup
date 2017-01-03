@@ -37,7 +37,7 @@ public class CameraController : MonoBehaviour {
 		transform.position += screenShakeActive;
 	}
 
-	public void screenShake(float toShake){
+	public void ScreenShake(float toShake){
 		screenShakeAmount = toShake;
 	}
 }
