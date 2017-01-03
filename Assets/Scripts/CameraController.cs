@@ -9,6 +9,13 @@ public class CameraController : MonoBehaviour {
 
 	public float moveAhead;
 
+	public float screenShakeDecay;
+
+	private Vector3 screenShakeActive;
+	private float screenShakeAmount;
+
+
+
 	// Use this for initialization
 	void Start () {
 	}
