@@ -38,6 +38,8 @@ public class CameraController : MonoBehaviour {
 	}
 
 	public void ScreenShake(float toShake){
-		screenShakeAmount = toShake;
+		if (toShake > screenShakeAmount) {
+			screenShakeAmount = toShake;
+		}
 	}
 }
