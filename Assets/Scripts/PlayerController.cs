@@ -30,6 +30,11 @@ public class PlayerController : MonoBehaviour {
 	private CameraController cameraController;
 	public float shakeAmount;
 
+	public float knockbackForce;
+	public float knockbackDuration;
+	private float knockbackCounter;
+	private bool knockBack;
+
 	// Use this for initialization
 	void Start () {
 		myRB = GetComponent<Rigidbody2D>();
@@ -47,6 +52,17 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 
 		muzzleFlash.SetActive (false);
+
+		if (knockBack) {
+			knockbackCounter -= Time.deltaTime;
+			myRB.velocity = new Vector2 (knockbackForce * transform.localScale.x, myRB.velocity.y);
+
+			if (knockbackCounter <= 0) {
+				knockBack = false;
+			}
+
+			return;
+		}
 		
 		myRB.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, myRB.velocity.y);
 
@@ -95,5 +111,11 @@ public class PlayerController : MonoBehaviour {
 			Debug.Log("On Enemy");
 			myRB.velocity = new Vector2(myRB.velocity.x, jumpSpeed * 0.75f);
 		}
+	}
+
+	public void KnockBack(){
+		knockbackCounter = knockbackDuration;
+		myRB.velocity = new Vector2 (knockbackForce * transform.localScale.x, knockbackForce);
+		knockBack = true;
 	}
 }
