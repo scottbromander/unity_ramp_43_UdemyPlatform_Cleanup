@@ -60,32 +60,28 @@ public class PlayerController : MonoBehaviour {
 			if (knockbackCounter <= 0) {
 				knockBack = false;
 			}
+		} else {
+			myRB.velocity = new Vector2 (Input.GetAxis ("Horizontal") * moveSpeed, myRB.velocity.y);
 
-			return;
-		}
+			if (Input.GetButtonDown ("Jump") && grounded) {
+				myRB.velocity = new Vector2 (myRB.velocity.x, jumpSpeed);
+				soundJump.Play ();
+			}
+
+			if (Input.GetAxisRaw ("Horizontal") > 0 && transform.localScale.x < 0)
+				transform.localScale = new Vector3 (1f, 1f, 1f);
+			if (Input.GetAxisRaw ("Horizontal") < 0 && transform.localScale.x > 0)
+				transform.localScale = new Vector3 (-1f, 1f, 1f);
 		
-		myRB.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed, myRB.velocity.y);
-
-		if(Input.GetButtonDown("Jump") && grounded)
-		{
-			myRB.velocity = new Vector2(myRB.velocity.x, jumpSpeed);
-			soundJump.Play ();
-		}
-
-		if(Input.GetAxisRaw("Horizontal") > 0 && transform.localScale.x < 0)
-			transform.localScale = new Vector3(1f, 1f, 1f);
-		if(Input.GetAxisRaw("Horizontal") < 0 && transform.localScale.x > 0)
-			transform.localScale = new Vector3(-1f, 1f, 1f);
-		
-		if(Input.GetButtonDown("Fire1"))
-		{
-			fireBullet ();
-		}
-
-		if(Input.GetButton("Fire1")){
-			betweenShotCounter -= Time.deltaTime;
-			if (betweenShotCounter <= 0) {
+			if (Input.GetButtonDown ("Fire1")) {
 				fireBullet ();
+			}
+
+			if (Input.GetButton ("Fire1")) {
+				betweenShotCounter -= Time.deltaTime;
+				if (betweenShotCounter <= 0) {
+					fireBullet ();
+				}
 			}
 		}
 
