@@ -19,3 +19,6 @@ Topics include:
   - Lerp
   - Screen Shake
 - Layer Management
+- Player Management
+  - Knockback
+  - Input Control
