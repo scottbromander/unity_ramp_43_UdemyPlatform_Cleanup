@@ -6,9 +6,12 @@ public class PlayerHealthManager : MonoBehaviour {
 	public int startingHealth;
 	public int currentHealth;
 
+	private PlayerController playerController;
+
 	// Use this for initialization
 	void Start () {
 		currentHealth = startingHealth;
+		playerController = GetComponent<PlayerController> ();
 	}
 	
 	// Update is called once per frame
@@ -22,5 +25,7 @@ public class PlayerHealthManager : MonoBehaviour {
 	public void HurtPlayer(int damage)
 	{
 		currentHealth -= damage;
+
+		playerController.KnockBack ();
 	}
 }
