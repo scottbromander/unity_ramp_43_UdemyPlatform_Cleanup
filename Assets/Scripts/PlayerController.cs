@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour {
 
 		if (knockBack) {
 			knockbackCounter -= Time.deltaTime;
-			myRB.velocity = new Vector2 (knockbackForce * transform.localScale.x, myRB.velocity.y);
+			myRB.velocity = new Vector2 (-knockbackForce * transform.localScale.x, myRB.velocity.y);
 
 			if (knockbackCounter <= 0) {
 				knockBack = false;
@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void KnockBack(){
 		knockbackCounter = knockbackDuration;
-		myRB.velocity = new Vector2 (knockbackForce * transform.localScale.x, knockbackForce);
+		myRB.velocity = new Vector2 (-knockbackForce * transform.localScale.x, knockbackForce);
 		knockBack = true;
 	}
 }
