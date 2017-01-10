@@ -17,6 +17,7 @@ Topics include:
 - Dynamic Sprite Swap
 - Camera Effects
   - Lerp
+  - Lead based on facing
   - Screen Shake
 - Layer Management
 - Player Management
