@@ -6,6 +6,10 @@ public class PlayerHealthManager : MonoBehaviour {
 	public int startingHealth;
 	public int currentHealth;
 
+	public SpriteRenderer[] bodyParts;
+	public float flashLenth;
+	private float flashCounter;
+
 	private PlayerController playerController;
 
 	// Use this for initialization
@@ -20,6 +24,14 @@ public class PlayerHealthManager : MonoBehaviour {
 		{
 			gameObject.SetActive(false);
 		}
+
+		if (flashCounter > 0) {
+			flashCounter -= Time.deltaTime;
+
+			if (flashCounter <= 0) {
+				UnFlash ();
+			}
+		}
 	}
 
 	public void HurtPlayer(int damage)
@@ -27,5 +39,20 @@ public class PlayerHealthManager : MonoBehaviour {
 		currentHealth -= damage;
 
 		playerController.KnockBack ();
+
+		Flash ();
+	}
+
+	public void Flash(){
+		for (var i = 0; i < bodyParts.Length; i++) {
+			bodyParts [i].material.SetFloat ("_FlashAmount", 1);
+		}
+		flashCounter = flashLenth;
+	}
+
+	public void UnFlash(){
+		for (var i = 0; i < bodyParts.Length; i++) {
+			bodyParts [i].material.SetFloat ("_FlashAmount", 0);
+		}
 	}
 }
