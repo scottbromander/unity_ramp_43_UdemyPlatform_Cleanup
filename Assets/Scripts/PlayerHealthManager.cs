@@ -36,11 +36,11 @@ public class PlayerHealthManager : MonoBehaviour {
 
 	public void HurtPlayer(int damage)
 	{
-		currentHealth -= damage;
-
-		playerController.KnockBack ();
-
-		Flash ();
+		if (!playerController.knockBack) {
+			currentHealth -= damage;
+			playerController.KnockBack ();
+			Flash ();
+		}
 	}
 
 	public void Flash(){

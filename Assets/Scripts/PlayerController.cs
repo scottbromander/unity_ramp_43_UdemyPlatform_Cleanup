@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour {
 	public float knockbackForce;
 	public float knockbackDuration;
 	private float knockbackCounter;
-	private bool knockBack;
+	public bool knockBack;
 
 	// Use this for initialization
 	void Start () {
