@@ -23,3 +23,4 @@ Topics include:
 - Player Management
   - Knockback
   - Input Control
+  - Damage Lockout
