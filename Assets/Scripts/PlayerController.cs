@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour {
 	public float knockbackForce;
 	public float knockbackDuration;
 	private float knockbackCounter;
+
+	[HideInInspector]
 	public bool knockBack;
 
 	// Use this for initialization
