@@ -24,3 +24,4 @@ Topics include:
   - Knockback
   - Input Control
   - Damage Lockout
+  - Player Death Effects
