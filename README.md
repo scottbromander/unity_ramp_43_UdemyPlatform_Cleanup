@@ -25,3 +25,4 @@ Topics include:
   - Input Control
   - Damage Lockout
   - Player Death Effects
+    - Keyframe Animation
